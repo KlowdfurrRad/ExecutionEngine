@@ -1,0 +1,64 @@
+options trader, our own fund, low MFT, 
+
+execution platform, 
+
+1st user front : Vue.js , backend: C++
+check pricing and hosting on cloud
+
+baskets, NIFTY50 basket weightage of 50 stocks
+ticker + weightages + expiry + options onto excel
+
+inputs: 100 crores; list of tickers, long short for each, weightages, based on the CMP;
+outputs : quantities for each stocks; simple rounding
+for each row ; columns: price, quantity, type of ticker, expiry of future (if future), volume and open interest. the quantity should not exceed 5% of last 30 days avg volume and open interest.
+
+Cash prices: compare spot prices NSE and BSE
+check if we want to go for the current/next month future or current equity cash. 
+
+Note: current future price - 100.4 ; fair value-100.5; 2nd month fair value = 101 ; 2nd month future = 100.9; then percentage 0.1/101 is smaller; hence 1st month. 3 months; 
+
+- Only check NSE futures, coz more liquid. between cash check BSE and NSE. If liquidity does not hold for it then move to 2nd cheapest.
+- We can only buy lots in futures so, for 64285 at lots of 500; we buy 285 in cash/equity.
+- Execution should comply the exchange rules, and executed in slice manner, and in certain ratios.
+- How much margin is required to enter the trade.
+- Add a total market value watcher and under conditions some and/or/not send the orders. If some criteria is hit we directly execute the trade. Need a parser if complex conditions.
+((x>20)||(y <50)) && 
+- Exchanges have rules like number of stocks per order, etc.
+- Always be a market order not limit order.
+
+=======================================================
+
+2nd UI
+- On some tickers : options, prices and quantities gives total market value. Ratios of each set and overall quantity. 2 legs of NIFTY 1500*price and strike. 
+so for total market value buy some sets at some limit and sell at a later limit add stop loss.
+
+=======================================================
+
+Palwe was saying GoLang is used for backend.
+
+=======================================================
+
+Questions: 
+What kind of app we building; standalone on 1 machine; backend on cloud always running/frontend with authorization??
+Are we only working live or any kind of historical also needed?
+If we do not need a lot of data then within application is fine, Otherwise might need database?
+
+Database choice:
+redis?, postgres? clickhouse? Access?
+Store basket information (name of stocks, weightages, sell/buy)
+Current portfolio held
+
+Backend : finalized C++ ; 
+What all to build :
+Inputs from frontend
+Data reading from vendors (Zerodha), database/in memory
+
+API for contacting and making trades Zerodha.
+
+Comparison logic among stock types. - Pricing Module
+
+Conditional logic we need to build.
+
+Frontend:
+Display on Frontend
+

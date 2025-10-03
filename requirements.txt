@@ -1,0 +1,5 @@
+numpy<2
+pandas>=2.0,<3
+dash>=2.15
+plotly>=5.0
+openpyxl>=3.1
