@@ -21,7 +21,7 @@ df = pd.DataFrame(data)
 app = Dash(__name__)
 
 app.layout = html.Div([
-    html.H2("Options Chain Viewer"),
+    html.H2("Options Chain Viewer", style={'textAlign': 'center', 'color': '#1f3c88'}),
 
     dash_table.DataTable(
         id='options-table',
@@ -37,21 +37,44 @@ app.layout = html.Div([
             {"name": "Put Gamma", "id": "Put Gamma"},
         ],
         data=df.to_dict('records'),
-        style_table={'overflowX': 'auto'},
-        style_cell={'textAlign': 'center', 'padding': '5px'},
-        style_header={'backgroundColor': '#f4f4f4', 'fontWeight': 'bold'}
+        style_table={'overflowX': 'auto', 'border': '1px solid #ccc', 'margin': '20px'},
+        style_cell={'textAlign': 'center', 'padding': '10px', 'fontFamily': 'Arial', 'fontSize': 14},
+        style_header={'backgroundColor': '#1f3c88', 'color': 'white', 'fontWeight': 'bold'},
+        style_data_conditional=[
+            {
+                'if': {'column_id': 'Call Bid'},
+                'backgroundColor': '#e3f2fd'
+            },
+            {
+                'if': {'column_id': 'Call Ask'},
+                'backgroundColor': '#bbdefb'
+            },
+            {
+                'if': {'column_id': 'Put Bid'},
+                'backgroundColor': '#ffebee'
+            },
+            {
+                'if': {'column_id': 'Put Ask'},
+                'backgroundColor': '#ffcdd2'
+            },
+            {
+                'if': {'column_id': 'Strike'},
+                'backgroundColor': '#f5f5f5',
+                'fontWeight': 'bold'
+            }
+        ]
     ),
 
     html.Br(),
 
     html.Div([
-        html.Label("Underlying Symbol:"),
-        dcc.Input(id='underlying-input', type='text', value='AAPL', style={'marginRight': '20px'}),
+        html.Label("Underlying Symbol:", style={'marginRight': '10px', 'color': '#1f3c88'}),
+        dcc.Input(id='underlying-input', type='text', value='AAPL', style={'marginRight': '30px'}),
 
-        html.Label("Expiry (YYYY-MM-DD):"),
+        html.Label("Expiry (YYYY-MM-DD):", style={'marginRight': '10px', 'color': '#1f3c88'}),
         dcc.Input(id='expiry-input', type='text', value='2025-10-15')
-    ], style={'marginTop': '20px'})
-])
+    ], style={'marginTop': '20px', 'textAlign': 'center'})
+], style={'backgroundColor': '#fafafa', 'padding': '20px'})
 
 if __name__ == '__main__':
     app.run(debug=True)
