@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Stenoa Capital Executive Trading Platform - Advanced Options Trading and Portfolio Management" />
+    <meta name="keywords" content="options trading, portfolio management, market data, risk management" />
+    <meta name="author" content="Stenoa Capital" />
+    
+    <!-- Security headers -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; connect-src 'self' ws: wss:;" />
+    
+    <!-- Preconnect to external resources -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    
+    <title>Stenoa Trading Platform</title>
+    
+    <style>
+      /* Loading screen styles */
+      #loading-screen {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(135deg, #1976d2 0%, #1565c0 100%);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        z-index: 9999;
+        color: white;
+        font-family: 'Roboto', sans-serif;
+      }
+      
+      .loading-spinner {
+        width: 60px;
+        height: 60px;
+        border: 4px solid rgba(255, 255, 255, 0.3);
+        border-top: 4px solid white;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+        margin-bottom: 20px;
+      }
+      
+      .loading-text {
+        font-size: 18px;
+        font-weight: 300;
+        margin-bottom: 10px;
+      }
+      
+      .loading-subtitle {
+        font-size: 14px;
+        opacity: 0.8;
+      }
+      
+      @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+      
+      /* Hide loading screen when app is ready */
+      body.app-ready #loading-screen {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Loading Screen -->
+    <div id="loading-screen">
+      <div class="loading-spinner"></div>
+      <div class="loading-text">Stenoa Trading Platform</div>
+      <div class="loading-subtitle">Loading market data and initializing systems...</div>
+    </div>
+    
+    <!-- Main Application Container -->
+    <div id="app"></div>
+    
+    <!-- JavaScript to hide loading screen when app loads -->
+    <script>
+      // Hide loading screen after a minimum time
+      window.addEventListener('load', function() {
+        setTimeout(() => {
+          document.body.classList.add('app-ready');
+        }, 1500);
+      });
+      
+      // Error handling for failed loads
+      window.addEventListener('error', function(e) {
+        const loadingScreen = document.getElementById('loading-screen');
+        if (loadingScreen) {
+          loadingScreen.innerHTML = `
+            <div style="text-align: center;">
+              <div style="font-size: 48px; margin-bottom: 20px;">⚠️</div>
+              <div style="font-size: 18px; margin-bottom: 10px;">Failed to Load Application</div>
+              <div style="font-size: 14px; opacity: 0.8;">Please check your internet connection and refresh the page.</div>
+              <button onclick="location.reload()" style="margin-top: 20px; padding: 10px 20px; background: white; color: #1976d2; border: none; border-radius: 4px; cursor: pointer;">
+                Refresh Page
+              </button>
+            </div>
+          `;
+        }
+      });
+      
+      // Development mode indicator
+      if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+        console.log('🚀 Stenoa Trading Platform - Development Mode');
+        console.log('📊 Options Trading & Pricing Engine Phase 2');
+      }
+    </script>
+    
+    <!-- Main application script - Vite will inject this -->
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

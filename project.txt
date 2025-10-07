@@ -26,17 +26,17 @@ Note: current future price - 100.4 ; fair value-100.5; 2nd month fair value = 10
 - Exchanges have rules like number of stocks per order, etc.
 - Always be a market order not limit order.
 
-=======================================================
+=================================================================
 
 2nd UI
 - On some tickers : options, prices and quantities gives total market value. Ratios of each set and overall quantity. 2 legs of NIFTY 1500*price and strike. 
 so for total market value buy some sets at some limit and sell at a later limit add stop loss.
 
-=======================================================
+=================================================================
 
 Palwe was saying GoLang is used for backend.
 
-=======================================================
+=================================================================
 
 Questions: 
 What kind of app we building; standalone on 1 machine; backend on cloud always running/frontend with authorization??
@@ -51,7 +51,7 @@ Current portfolio held
 Backend : finalized C++ ; 
 What all to build :
 Inputs from frontend
-Data reading from vendors (Zerodha), database/in memory
+Data reading from vendors (Zerodha), database/in-memory
 
 API for contacting and making trades Zerodha.
 
@@ -61,68 +61,3 @@ Conditional logic we need to build.
 
 Frontend:
 Display on Frontend
-
-=====================================================
-
-Abhishek Modi 03/10/2025
-
-Take second by second data for options.
-Price options 
-
-=====================================================
-
-For us:
-Cash & futures
-Options Chain
-
-He has been trading options for the last 5 years. Couple of 100 crores.
-He has collaborated with large hedge fund of 4-5 billion dollars. They are into equity options. They are not present in India.
-Modi has pitched to them to come to India but they are sus because 
-
-Build watertight algorithm. Should be able to connect with other pricing models.
-Want to place order to multiple brokers -> Should allow placing orders on multiple brokers.
-He wants to get other people from departments such as math etc.
-Would later send this to people from CMU so that to test and fine-tune.
-
-=====
-
-Algorithm Execution 1:
-NIFTY gives weightage every morning.
-Weightage will be entered by me in the morning.
-Choose between current and next month future. Only look at NSE futures. NSE cash equity vs NSE current month future vs NSE next month future.
-Need to do DCF etc.
-Also checks whether BSE or NSE cash equity is lower.
-Also checks liquidity , not more than 5% of day.
-
-Before executing trade, show the list of trades that will be done. Total market value.
-Other point you need to note: Not trading 0dte.
-
-There should be an option to execute at limit -> Should show the market value after slippage.
-
-If I want to enter options, I can also add OPTION TICKER, EXPIRY etc. Suppose to hedge the investment.
-
-He says the execution part is the most complicated.
-
-=====
-
-Abhishek has Philips capital, Motilal, AXIS.
-
-=====
-
-Discussion regarding limits on zerodha etc.
-Don't rely on zerodha.
-
-As per our rules, need to figure out decent ratio to execute them at one time.
-Challenges like: If balance remaining after buying futures, may need to do some cash equities.
-If stuff not executed, should clean up.
-
-=====
-
-Second algorithm:
-Extract options chain from zerodha. Such as NIFTY.
-Display gamma, theta, delta. Calculated IV, and our calculated IV -> from our pricing software.
-If we have any ideas or done research can implement ourselves also. He prefers this to be orthogonal to the other guy as if we collab with the quant fin guy then our ideas get biased.
-
-Execution for options:
-[Note: Historial data storage will not be done by us]
-If I want to get into a six legged option combination, should show how much loss to slippage.
