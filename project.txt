@@ -126,3 +126,19 @@ If we have any ideas or done research can implement ourselves also. He prefers t
 Execution for options:
 [Note: Historial data storage will not be done by us]
 If I want to get into a six legged option combination, should show how much loss to slippage.
+
+=====
+
+07/10/2025 Abhishek Visit, New info listed
+- Wants multiple baskets on the UI.
+- Will be hedging one basket with another. Other possibility it combine all tickers of main and hedge into one basket.
+- Wants market value for both.
+- Long NIFTY stock -> cash and future long, And short synthetic => display the market value
+- TrueData around 1 lakh price. Provides index weightages from many exchanges , for example nifty weightage. This changes every day and released by the exchange.
+- He has arista switch, top of the line. Not many companies that make these switches. Niche market.
+- Another project:
+    Will give data on many asset classes. For tickers in each asset class wants to provide some ui that shows stuff about possible opportunities.
+    Correlation of ticker Open Close changes, if corr high and one day moves differently can profit.
+    Can do something similar for vol and variance.
+    Bloomberg data use for this. Can even talk with bloomberg people over call or they can send someone for us to ask doubts.
+- We can only short stocks intraday in India. Must square off. Send a intimation to trader on UI to do so, or the broker may put a penalty. These penalties don't even show up in PnL, might show up in email or somewhere later.
