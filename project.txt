@@ -1,3 +1,5 @@
+This File contains notes taken down regarding the project.
+
 options trader, our own fund, low MFT, 
 
 execution platform, 

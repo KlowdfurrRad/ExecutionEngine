@@ -1,2 +1,4 @@
+This file contains project notes which are useful for the implementors.
+
 Kite Connect:
 github.com/zerodha/pykiteconnect?tab=readme-ov-file

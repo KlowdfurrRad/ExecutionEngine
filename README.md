@@ -1,6 +1,6 @@
 # Dash Trading Project
 
-This project contains a Dash application for trading analysis.
+This project contains a Dash application for trading analysis. This README highlights how to use it and install python libs.
 
 ## Setup
 
