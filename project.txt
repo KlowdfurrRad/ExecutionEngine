@@ -144,3 +144,24 @@ If I want to get into a six legged option combination, should show how much loss
     Can do something similar for vol and variance.
     Bloomberg data use for this. Can even talk with bloomberg people over call or they can send someone for us to ask doubts.
 - We can only short stocks intraday in India. Must square off. Send a intimation to trader on UI to do so, or the broker may put a penalty. These penalties don't even show up in PnL, might show up in email or somewhere later.
+
+=====
+29/10/2025 Some explanations of his excel sheet.
+An Algorithm:
+Spread between futures and stock over 24 months's 5 days.
+
+Shared an excel sheet.
+Divs: 23 (Tells how many dividends announced)
+Mean, 1std dev below(Green). 1std dev above(Red). And then 3 std devs figures.
+Future - Cash Absolute value
+Call - Put value. Just above the ATM strike.
+Previously NSE BSE, Now NSE Cash to NSE Future.
+Divs: Divs Announced, Xdate(The date dividend is announced), BDVD(Bloomberg forecasted dividend)
+What is div1 to div18 -> The dividends of 18 different stocks and dates announced in brackets.
+
+If you look at the bottom you can open new tabs. Should be able to group tickers into sheets.
+Wants same design as the excel sheet, want same colours as well.
+Particular font called Lucida.
+Should be able to move rows/ cols. Have multiple tabs.
+Not only this, give some of your inputs as well.
+He needs to give Bloomberg data.
