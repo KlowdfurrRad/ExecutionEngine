@@ -1,0 +1,45 @@
+{
+  "name": "cash-futures-thv-trading-app",
+  "version": "1.0.0",
+  "description": "A comprehensive Cash Futures Theoretical Value trading application with Excel-like functionality",
+  "main": "index.js",
+  "scripts": {
+    "start": "echo 'Please use QUICK_START.bat or run backend and frontend separately'",
+    "backend": "cd backend && npm run dev",
+    "frontend": "cd frontend && npm start",
+    "install-all": "cd backend && npm install && cd ../frontend && npm install",
+    "test": "echo 'Tests can be run in backend and frontend directories separately'",
+    "build": "cd frontend && npm run build",
+    "lint": "echo 'Linting can be run in backend and frontend directories'"
+  },
+  "keywords": [
+    "trading",
+    "finance",
+    "futures",
+    "options",
+    "black-scholes",
+    "bloomberg",
+    "react",
+    "node.js",
+    "financial-calculations",
+    "excel-like",
+    "real-time",
+    "websocket"
+  ],
+  "author": "Trading Application Team",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/cash-futures-thv-trading-app.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yourusername/cash-futures-thv-trading-app/issues"
+  },
+  "homepage": "https://github.com/yourusername/cash-futures-thv-trading-app#readme",
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=8.0.0"
+  },
+  "devDependencies": {},
+  "dependencies": {}
+}

@@ -1,0 +1,22 @@
+{
+  "server": {
+    "host": "0.0.0.0",
+    "port": 5002,
+    "threads": 4
+  },
+  "market": {
+    "update_interval_ms": 3000,
+    "default_volatility": 0.25,
+    "default_rate": 0.064,
+    "default_time_to_expiry": 30
+  },
+  "calculations": {
+    "monte_carlo_simulations": 100000,
+    "precision_decimals": 4,
+    "enable_parallel_processing": true
+  },
+  "websocket": {
+    "max_connections": 1000,
+    "heartbeat_interval": 30
+  }
+}
