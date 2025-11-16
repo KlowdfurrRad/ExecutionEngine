@@ -2,5 +2,7 @@
 /node_modules
 
 # Cache and large files
-/frontend/node_modules/.cache/
+/frontend/node_modules
 *.pack
+
+/backend_cpp/build
