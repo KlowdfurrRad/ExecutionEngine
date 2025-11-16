@@ -1,0 +1,6 @@
+# Dependencies
+/node_modules
+
+# Cache and large files
+/frontend/node_modules/.cache/
+*.pack
